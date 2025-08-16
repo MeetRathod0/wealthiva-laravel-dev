@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FormApp">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AngularJS Form with Dummy API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+        }
+
+        input,
+        select,
+        textarea {
+            display: block;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body ng-controller="FormController">
+
+    <h2>AngularJS Form with Dummy API</h2>
+
+    <form ng-submit="submitForm()">
+
+        <label>
+            Name:
+            <input type="text" ng-model="form.name" required />
+        </label>
+
+        <label>
+            Email:
+            <input type="email" ng-model="form.email" required />
+        </label>
+
+        <label>
+            Role:
+            <select ng-model="form.role" required>
+                <option value="" disabled selected>Select Role</option>
+                <option>Admin</option>
+                <option>User</option>
+                <option>Guest</option>
+            </select>
+        </label>
+
+        <label>
+            Gender:
+            <label><input type="radio" ng-model="form.gender" value="Male" /> Male</label>
+            <label><input type="radio" ng-model="form.gender" value="Female" /> Female</label>
+        </label>
+
+        <label>
+            <input type="checkbox" ng-model="form.subscribe" />
+            Subscribe to newsletter
+        </label>
+
+        <label>
+            Bio:
+            <textarea ng-model="form.bio" rows="3"></textarea>
+        </label>
+
+        <label>
+            Date of Birth:
+            <input type="date" ng-model="form.dob" />
+        </label>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Submitted Entries</h3>
+    <table ng-if="entries.length">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Gender</th>
+                <th>Subscribed</th>
+                <th>DOB</th>
+                <th>Bio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="entry in entries track by $index">
+                <td>{{$index + 1}}</td>
+                <td>{{entry.name}}</td>
+                <td>{{entry.email}}</td>
+                <td>{{entry.role}}</td>
+                <td>{{entry.gender}}</td>
+                <td>{{entry.subscribe ? 'Yes' : 'No'}}</td>
+                <td>{{entry.dob | date : 'yyyy-MM-dd'}}</td>
+                <td>{{entry.bio}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        angular.module('FormApp', [])
+            .controller('FormController', ['$scope', '$http', function ($scope, $http) {
+                $scope.form = {
+                    name: '',
+                    email: '',
+                    role: '',
+                    gender: '',
+                    subscribe: false,
+                    bio: '',
+                    dob: ''
+                };
+
+                $scope.entries = [];
+
+                $scope.submitForm = function () {
+                    $http.post('https://jsonplaceholder.typicode.com/posts', $scope.form)
+                        .then(function (response) {
+                            $scope.entries.push(angular.copy($scope.form));
+
+                            // Reset form
+                            $scope.form = {
+                                name: '',
+                                email: '',
+                                role: '',
+                                gender: '',
+                                subscribe: false,
+                                bio: '',
+                                dob: ''
+                            };
+                        }, function (error) {
+                            alert('Failed to submit form.');
+                        });
+                };
+            }]);
+    </script>
+</body>
+
+</html>
