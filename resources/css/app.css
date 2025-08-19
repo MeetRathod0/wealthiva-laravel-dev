@@ -187,6 +187,11 @@ body {
     color: var(--color-success-light);
 }
 
+.status-badge-inactive {
+    color: var(--color-danger);
+    background: var(--color-danger-10);
+}
+
 .status-unpaid {
     color: var(--color-danger);
     background: var(--color-danger-10);

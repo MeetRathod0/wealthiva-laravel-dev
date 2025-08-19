@@ -17,7 +17,7 @@
         Withdrawal Type
       </h2>
       <div class="space-y-1.5">
-        <select class="w-full input-field p-2.5 rounded-md bg-gray-700 border border-gray-600">
+        <select class="w-full input-field p-2.5 rounded-md bg-zinc-800 border border-zinc-700">
         <option selected>Working Wallet</option>
         <option>Non-Working Wallet</option>
         <option>Direct Wallet</option>
@@ -48,7 +48,7 @@
 
       <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row gap-2">
-      <button class="btn btn-primary rounded-md">Submit</button>
+      <button class="btn btn-primary rounded-md font-semibold">Submit</button>
       <button class="btn btn-outline text-gray-300 rounded-md">
         Check History
       </button>

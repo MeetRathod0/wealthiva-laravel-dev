@@ -49,11 +49,11 @@
                                 <td class="py-3">
                                     <a v-if="user.is_active==1"
                                         v-on:click="toggleUserStatus(user.id,user.is_active,user.fullname)"
-                                        class="status-badge text-xs font-medium py-1 px-2 text-black rounded-full bg-green-500">
+                                        class="status-badge text-xs font-medium py-1 px-2 rounded-full">
                                         Active</a>
                                     <a v-if="user.is_active==0"
                                         v-on:click="toggleUserStatus(user.id,user.is_active,user.fullname)"
-                                        class="status-badge text-xs font-medium py-1 px-2 text-black rounded-full bg-red-500">
+                                        class="status-badge-inactive text-xs font-medium py-1 px-2 rounded-full">
                                         Inactive</a>
 
 
@@ -61,7 +61,7 @@
                                 </td>
                                 <td>
                                     <a :href="'/admin/user-profile/' + user.id"
-                                        class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-1 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                                        class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-1 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500 h-8 w-8 justify-center">
                                         <i class='bx bxs-edit bx-xs'></i>
                                     </a>
                                 </td>

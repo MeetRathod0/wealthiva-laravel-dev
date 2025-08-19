@@ -31,7 +31,7 @@
       </div>
       <!-- Button Group -->
       <div class="flex space-x-3"> <!-- Medium spacing -->
-        <button class="btn-outline text-blue-300 py-2 px-4 rounded-lg text-sm"
+        <button class="btn-outline text-gray-300 py-2 px-4 rounded-lg text-sm"
         onclick="addDeposit()"><!-- Medium padding/font -->
         <!-- Medium padding/font -->
         ADD
