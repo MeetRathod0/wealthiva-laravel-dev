@@ -29,19 +29,19 @@
 
       <!-- Wallet Address -->
       <div class="mb-3">
-      <label class="info-label block mb-1">Wallet Address</label>
+      <label class="info-label text-gray-300 font-medium block mb-1">Wallet Address</label>
       <input type="text" class="w-full input-field rounded-md" value="0" />
       </div>
 
       <!-- Amount -->
       <div class="mb-3">
-      <label class="info-label block mb-1">Amount</label>
+      <label class="info-label text-gray-300 font-medium block mb-1">Amount</label>
       <input type="text" class="w-full input-field rounded-md" value="0.00" />
       </div>
 
       <!-- Google Authenticator -->
       <div class="mb-4">
-      <label class="info-label block mb-1">Google Auth Code</label>
+      <label class="info-label block text-gray-300 font-medium mb-1">Google Auth Code</label>
       <input type="text" class="w-full input-field rounded-md" value="0" />
       <p class="text-2xs text-gray-300 mt-1">Available: 9.76 USD</p>
       </div>

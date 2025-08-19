@@ -349,3 +349,66 @@ body {
         grid-column: span 2;
     }
 }
+
+/* Tree-graph  */
+.tree-line {
+    stroke: #ffffff;
+    stroke-width: 2;
+    fill: none;
+    transition: all 0.3s ease;
+}
+.arrow-head {
+    fill: #ffffff;
+}
+.tree-node {
+    transition: all 0.3s ease;
+}
+.breadcrumb-item {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.breadcrumb-item:hover {
+    background-color: #4b5563;
+}
+/* Custom arrow marker */
+.connection-arrow {
+    stroke: #ffffff;
+    stroke-width: 2;
+    fill: none;
+    marker-end: url(#arrowhead);
+}
+
+/* Data Table */
+#dt-search-0,
+#dt-length-0 {
+    background: var(--color-white-08);
+    border: 1px solid var(--color-white-10);
+}
+
+.pagination a {
+    background: var(--color-white-03);
+    border-color: var(--color-white-10);
+}
+
+.pagination a[aria-current="page"] {
+    background: var(--color-white-10);
+}
+
+#userTable tr:nth-child(even) {
+    background-color: var(--color-white-08);
+}
+
+#userTable_wrapper div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+#userTable_wrapper div:nth-last-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}

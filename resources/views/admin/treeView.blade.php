@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="mx-auto text-white">
-    <div id="app" class="container mx-auto p-8">
+    <div id="appTree" class="container mx-auto">
 
     <!-- Breadcrumb Navigation -->
     <div class="profile-card rounded-lg p-4 mb-6">
@@ -68,7 +68,7 @@
           class="border-2 rounded-lg px-6 py-3 text-center hover:opacity-90 transition-all cursor-pointer transform hover:scale-105 font-semibold"
           :class="{ 
       'bg-gray-900 text-white border-gray-800': node.isRoot,
-      'highlight-box text-white border-gray-900': !node.isRoot,
+      'highlight-box text-white border-zinc-700': !node.isRoot,
       'shadow-lg': node.isRoot
       }" style="
       min-width: 140px;
@@ -96,7 +96,7 @@
 
     createApp({
     setup() {
-      const originalTreeData = JSON.parse(@json($hierarchy)); 
+      const originalTreeData = JSON.parse(@json($hierarchy));
       const currentRoot = ref(originalTreeData);
       const breadcrumb = ref([originalTreeData]);
       const nodeMap = ref(new Map());
@@ -289,6 +289,6 @@
       navigateToNode,
       };
     },
-    }).mount("#app");
+    }).mount("#appTree");
   </script>
 @endsection
